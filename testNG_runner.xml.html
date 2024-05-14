@@ -1,0 +1,90 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- How to run a specific package -->
+<!--
+<suite name="EuroTech Automation" verbose="1">
+    <test name="Smoke Test">
+        <packages>
+            <package name="com.eurotech.test.day18_extentReports_screenshot"></package>
+        </packages>
+    </test>
+</suite>
+-->
+<!--When you write your syntax you have to save it to run - (ctrl+S)-->
+<!--To run - right click and Run-->
+
+<!-- How to run more than one package -->
+<!--
+<suite name="EuroTech Automation" verbose="1">
+<test name="Smoke Test">
+    <packages>
+        <package name="com.eurotech.test.day18_extentReports_screenshot"></package>
+        <package name="com.eurotech.test.day19_review_xml_runner"></package>
+    </packages>
+</test>
+</suite>
+-->
+
+<!-- How to run all packages -->
+<!--
+<suite name="EuroTech Automation" verbose="1">
+    <test name="Regression Test">
+        <packages>
+            <package name="com.eurotech.test.*"></package>
+        </packages>
+    </test>
+</suite>
+-->
+
+<!-- How to run a specific class -->
+<!--
+<suite name="EuroTech Automation" verbose="1">
+    <test name="Class Test">
+        <classes>
+            <class name="com.eurotech.test.day19_review_xml_runner.VerifyUserInfo"></class>
+        </classes>
+    </test>
+</suite>
+-->
+
+<!-- How to run multiple class -->
+<!--
+<suite name="EuroTech Automation" verbose="1">
+    <test name="Multiple Class Test">
+        <classes>
+            <class name="com.eurotech.test.day19_review_xml_runner.VerifyUserInfo"></class>
+            <class name="com.eurotech.test.day16_POM_2.BrowserUtilsTest"></class>
+        </classes>
+    </test>
+</suite>
+-->
+
+<!-- How to run a specific test method in the class -->
+<!--
+<suite name="EuroTech Automation" verbose="1">
+    <test name="Specific Test Method">
+        <classes>
+            <class name="com.eurotech.test.day16_POM_2.BrowserUtilsTest">
+                <methods>
+                    <include name="test_Actions"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+-->
+
+<!-- How to run all test methods in one class without one specific test method-->
+<!--
+<suite name="EuroTech Automation" verbose="1">
+    <test name="Specific Test Method">
+        <classes>
+            <class name="com.eurotech.test.day16_POM_2.BrowserUtilsTest">
+                <methods>
+                    <exclude name="test_Actions"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+-->
