@@ -39,7 +39,7 @@ public class TC1_RegisterUser extends TestBase {
         loginPage.email.sendKeys("glykrt@gmail.com");
         BrowserUtils.waitFor(2);
         extentLogger.info("Click Submit Button");
-        loginPage.submitBtn.click();
+        loginPage.signUpBtn.click();
         extentLogger.info("Verify that 'ENTER ACCOUNT INFORMATION' is visible");
         Assert.assertEquals(signUpPage.accountInformationText.getText(),"ENTER ACCOUNT INFORMATION");
         extentLogger.info("Fill details: Title, Name, Email, Password, Date of birth");

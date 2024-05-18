@@ -18,4 +18,8 @@ public abstract class BasePage {
 
     @FindBy(xpath = "//a[text()=' Delete Account']")
     public WebElement deleteAccountBtn;
+
+    @FindBy(xpath = "//a[text()=' Logout']")
+    public WebElement logoutBtn;
+
 }

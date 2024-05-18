@@ -12,7 +12,7 @@ public class LoginPage extends BasePage{
     public WebElement email;
 
     @FindBy(xpath = "//button[text()='Signup']")
-    public WebElement submitBtn;
+    public WebElement signUpBtn;
 
     @FindBy(xpath = "//h2[text()='New User Signup!']")
     public WebElement newUserSignUp;
@@ -28,5 +28,11 @@ public class LoginPage extends BasePage{
 
     @FindBy(xpath = "//button[text()='Login']")
     public WebElement loginBtn;
+
+    @FindBy(xpath = "//p[text()='Your email or password is incorrect!']")
+    public WebElement incorrectMsg;
+
+    @FindBy(xpath = "//p[text()='Email Address already exist!']")
+    public WebElement existingEmailMsg;
 
 }
