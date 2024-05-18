@@ -3,7 +3,7 @@ package com.eurotech.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends HomePage{
+public class LoginPage extends BasePage{
 
     @FindBy(xpath = "//input[@type='text']")
     public WebElement username;
@@ -16,4 +16,17 @@ public class LoginPage extends HomePage{
 
     @FindBy(xpath = "//h2[text()='New User Signup!']")
     public WebElement newUserSignUp;
+
+    @FindBy(xpath = "//h2[text()='Login to your account']")
+    public WebElement yourAccountText;
+
+    @FindBy(xpath = "//input[@data-qa='login-email']")
+    public WebElement loginEmail;
+
+    @FindBy(xpath = "//input[@data-qa='login-password']")
+    public WebElement loginPassword;
+
+    @FindBy(xpath = "//button[text()='Login']")
+    public WebElement loginBtn;
+
 }

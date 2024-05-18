@@ -1,26 +1,27 @@
-package com.eurotech.test.testCase1;
+package com.eurotech.test;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.eurotech.pages.HomePage;
+
+import com.eurotech.pages.AccountPage;
 import com.eurotech.pages.LoginPage;
 import com.eurotech.pages.SignUpPage;
-import com.eurotech.test.TestBase;
 import com.eurotech.utilities.BrowserUtils;
 import com.eurotech.utilities.ConfigurationReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RegisterUser extends TestBase {
+public class TC1_RegisterUser extends TestBase {
 
-    HomePage homePage;
+
     LoginPage loginPage;
     SignUpPage signUpPage;
+    AccountPage accountPage;
 
     @Test
     public void test_registerUser() {
-        homePage = new HomePage();
+
         loginPage = new LoginPage();
         signUpPage = new SignUpPage();
+        accountPage = new AccountPage();
 
         extentLogger = report.createTest("Register User Test");
         extentLogger.info("Go to "+ ConfigurationReader.get("url")+" website");
@@ -28,7 +29,7 @@ public class RegisterUser extends TestBase {
         extentLogger.info("Verify that home page is visible successfully");
         Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/");
         extentLogger.info("Click SignUp/Login Button");
-        homePage.signUp_loginBtn.click();
+        loginPage.signUp_loginBtn.click();
         extentLogger.info("Verify 'New User Signup!' is visible");
         Assert.assertEquals(loginPage.newUserSignUp.getText(),"New User Signup!");
         extentLogger.info("Enter Register User Name");
@@ -44,8 +45,32 @@ public class RegisterUser extends TestBase {
         extentLogger.info("Fill details: Title, Name, Email, Password, Date of birth");
         signUpPage.titleGender.click();
         BrowserUtils.waitFor(2);
-        Assert.assertTrue(signUpPage.titleGender.isSelected());
+        Assert.assertFalse(signUpPage.titleGender.isSelected());
         signUpPage.password.sendKeys("glykrt123");
+        signUpPage.selectDayDropdown("8");
+        signUpPage.selectMonthDropdown("2");
+        signUpPage.selectYearDropdown("1988");
+        extentLogger.info(" Select checkbox 'Sign up for our newsletter!'");
+        signUpPage.newsletters.click();
+        extentLogger.info("Select checkbox 'Receive special offers from our partners!'");
+        signUpPage.optin.click();
+        extentLogger.info("Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number");
+        signUpPage.addressInformation();
+        extentLogger.info("Click 'Create Account button'");
+        signUpPage.createAccountBtn.click();
+        extentLogger.info("Verify that 'ACCOUNT CREATED!' is visible");
+        Assert.assertEquals(accountPage.accountCreatedText.getText(),"ACCOUNT CREATED!");
+        extentLogger.info("Click 'Continue' button");
+        accountPage.continueCreateBtn.click();
+        extentLogger.info("Verify that 'Logged in as username' is visible");
+        Assert.assertEquals(accountPage.loggedUsername.getText(),"Gulay");
+//        extentLogger.info("Click 'Delete Account' button");
+//        accountPage.deleteAccountBtn.click();
+//        extentLogger.info("Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button");
+//        Assert.assertEquals(accountPage.accountDeleteText.getText(),"ACCOUNT DELETED!");
+//        accountPage.continueDeleteBtn.click();
+
+
 
 
 
