@@ -1,10 +1,10 @@
-package com.eurotech.pages;
+package com.auto_exercise.pages;
 
+import com.auto_exercise.test.TestBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends BasePage{
-
+public class LoginPage extends BasePage {
     @FindBy(xpath = "//input[@type='text']")
     public WebElement username;
 
@@ -34,5 +34,6 @@ public class LoginPage extends BasePage{
 
     @FindBy(xpath = "//p[text()='Email Address already exist!']")
     public WebElement existingEmailMsg;
+
 
 }

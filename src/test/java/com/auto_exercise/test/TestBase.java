@@ -1,11 +1,11 @@
-package com.eurotech.test;
+package com.auto_exercise.test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.eurotech.utilities.BrowserUtils;
-import com.eurotech.utilities.ConfigurationReader;
-import com.eurotech.utilities.Driver;
+import com.auto_exercise.utilities.BrowserUtils;
+import com.auto_exercise.utilities.ConfigurationReader;
+import com.auto_exercise.utilities.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;

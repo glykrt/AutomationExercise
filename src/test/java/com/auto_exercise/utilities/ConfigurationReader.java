@@ -1,4 +1,4 @@
-package com.eurotech.utilities;
+package com.auto_exercise.utilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;

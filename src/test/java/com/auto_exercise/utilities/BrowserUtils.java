@@ -1,4 +1,4 @@
-package com.eurotech.utilities;
+package com.auto_exercise.utilities;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;

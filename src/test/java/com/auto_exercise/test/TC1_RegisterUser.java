@@ -1,11 +1,11 @@
-package com.eurotech.test;
+package com.auto_exercise.test;
 
 
-import com.eurotech.pages.AccountPage;
-import com.eurotech.pages.LoginPage;
-import com.eurotech.pages.SignUpPage;
-import com.eurotech.utilities.BrowserUtils;
-import com.eurotech.utilities.ConfigurationReader;
+import com.auto_exercise.pages.AccountPage;
+import com.auto_exercise.pages.LoginPage;
+import com.auto_exercise.pages.SignupPage;
+import com.auto_exercise.utilities.BrowserUtils;
+import com.auto_exercise.utilities.ConfigurationReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,14 +13,14 @@ public class TC1_RegisterUser extends TestBase {
 
 
     LoginPage loginPage;
-    SignUpPage signUpPage;
+    SignupPage signUpPage;
     AccountPage accountPage;
 
     @Test
     public void test_registerUser() {
 
         loginPage = new LoginPage();
-        signUpPage = new SignUpPage();
+        signUpPage = new SignupPage();
         accountPage = new AccountPage();
 
         extentLogger = report.createTest("Register User Test");
@@ -47,9 +47,7 @@ public class TC1_RegisterUser extends TestBase {
         BrowserUtils.waitFor(2);
         Assert.assertFalse(signUpPage.titleGender.isSelected());
         signUpPage.password.sendKeys("glykrt123");
-        signUpPage.selectDayDropdown("8");
-        signUpPage.selectMonthDropdown("2");
-        signUpPage.selectYearDropdown("1988");
+        signUpPage.selectDropdown("8","2","1988");
         extentLogger.info(" Select checkbox 'Sign up for our newsletter!'");
         signUpPage.newsletters.click();
         extentLogger.info("Select checkbox 'Receive special offers from our partners!'");
@@ -64,11 +62,11 @@ public class TC1_RegisterUser extends TestBase {
         accountPage.continueCreateBtn.click();
         extentLogger.info("Verify that 'Logged in as username' is visible");
         Assert.assertEquals(accountPage.loggedUsername.getText(),"Gulay");
-//        extentLogger.info("Click 'Delete Account' button");
-//        accountPage.deleteAccountBtn.click();
-//        extentLogger.info("Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button");
-//        Assert.assertEquals(accountPage.accountDeleteText.getText(),"ACCOUNT DELETED!");
-//        accountPage.continueDeleteBtn.click();
+        extentLogger.info("Click 'Delete Account' button");
+        accountPage.deleteAccountBtn.click();
+        extentLogger.info("Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button");
+        Assert.assertEquals(accountPage.accountDeleteText.getText(),"ACCOUNT DELETED!");
+        accountPage.continueDeleteBtn.click();
 
 
 

@@ -1,13 +1,10 @@
-package com.eurotech.pages;
+package com.auto_exercise.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.List;
-
-public class SignUpPage extends BasePage{
-
+public class SignupPage extends BasePage{
     @FindBy(xpath = "//b[text()='Enter Account Information']")
     public WebElement accountInformationText;
 
@@ -66,21 +63,13 @@ public class SignUpPage extends BasePage{
     public WebElement createAccountBtn;
 
 
-
-
-
-    public void selectDayDropdown(String day){
+    public void selectDropdown(String day,String month,String year){
         Select selectDay = new Select(dayDropdown);
         selectDay.selectByValue(day);
-    }
-
-    public void selectMonthDropdown(String month){
-        Select selectDay = new Select(monthDropdown);
-        selectDay.selectByValue(month);
-    }
-    public void selectYearDropdown(String year){
-        Select selectDay = new Select(yearDropdown);
-        selectDay.selectByValue(year);
+        Select selectMonth = new Select(monthDropdown);
+        selectMonth.selectByValue(month);
+        Select selectYear = new Select(yearDropdown);
+        selectYear.selectByValue(year);
     }
     public void selectCountryDropdown(String country){
         Select selectDay = new Select(countryDropdown);
@@ -100,8 +89,6 @@ public class SignUpPage extends BasePage{
         mobileNumber.sendKeys("05555555");
 
     }
-
-
 
 
 }

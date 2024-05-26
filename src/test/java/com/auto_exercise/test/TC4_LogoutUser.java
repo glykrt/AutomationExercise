@@ -1,8 +1,7 @@
-package com.eurotech.test;
+package com.auto_exercise.test;
 
-import com.eurotech.pages.LoginPage;
-import com.eurotech.utilities.ConfigurationReader;
-import com.google.common.base.Verify;
+import com.auto_exercise.pages.LoginPage;
+import com.auto_exercise.utilities.ConfigurationReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
