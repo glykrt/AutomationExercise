@@ -1,5 +1,6 @@
 package com.auto_exercise.pages;
 
+import com.auto_exercise.utilities.ConfigurationReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -72,11 +73,18 @@ public class SignupPage extends BasePage{
         selectYear.selectByValue(year);
     }
     public void selectCountryDropdown(String country){
-        Select selectDay = new Select(countryDropdown);
-        selectDay.selectByValue(country);
+        Select selectCountry = new Select(countryDropdown);
+        selectCountry.selectByValue(country);
+    }
+
+    public void accountInformation(){
+        titleGender.click();
+        password.sendKeys(ConfigurationReader.get("password"));
+        selectDropdown("5","5","1990");
     }
 
     public void addressInformation(){
+
         firstName.sendKeys("Gulay");
         lastName.sendKeys("Krt");
         company.sendKeys("Google");
@@ -87,7 +95,7 @@ public class SignupPage extends BasePage{
         city.sendKeys("NewYork");
         zipCode.sendKeys("00234");
         mobileNumber.sendKeys("05555555");
-
+        createAccountBtn.click();
     }
 
 

@@ -27,20 +27,12 @@ public class TC5_ExistingEmail extends TestBase{
         loginPage.email.sendKeys("glykrt@gmail.com");
         BrowserUtils.waitFor(2);
         extentLogger.info("Click Submit Button");
-        loginPage.signUpBtn.click();
+        loginPage.signupBtn.click();
         extentLogger.info("Verify error 'Email Address already exist!' is visible");
         Assert.assertEquals(loginPage.existingEmailMsg.getText(),"Email Address already exist!");
         extentLogger.pass("Passed");
 
     }
 
-    //    Test Case 5: Register User with existing email
-//1. Launch browser
-//2. Navigate to url 'http://automationexercise.com'
-//            3. Verify that home page is visible successfully
-//4. Click on 'Signup / Login' button
-//5. Verify 'New User Signup!' is visible
-//6. Enter name and already registered email address
-//7. Click 'Signup' button
-//8. Verify error 'Email Address already exist!' is visible
+
 }
