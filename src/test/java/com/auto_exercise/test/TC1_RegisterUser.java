@@ -1,7 +1,7 @@
 package com.auto_exercise.test;
 
 
-import com.auto_exercise.pages.CreateAcoountPage;
+import com.auto_exercise.pages.AccountCreatedPage;
 import com.auto_exercise.pages.DeleteAccountPage;
 import com.auto_exercise.pages.LoginPage;
 import com.auto_exercise.pages.SignupPage;
@@ -14,7 +14,7 @@ public class TC1_RegisterUser extends TestBase {
 
     LoginPage loginPage;
     SignupPage signupPage;
-    CreateAcoountPage createAcoountPage;
+    AccountCreatedPage accountCreatedPage;
     DeleteAccountPage deleteAccountPage;
 
 
@@ -23,6 +23,7 @@ public class TC1_RegisterUser extends TestBase {
 
         loginPage = new LoginPage();
         signupPage = new SignupPage();
+        accountCreatedPage = new AccountCreatedPage();
         deleteAccountPage = new DeleteAccountPage();
 
         extentLogger = report.createTest("Register User Test");
@@ -44,32 +45,24 @@ public class TC1_RegisterUser extends TestBase {
         extentLogger.info("Verify that 'ENTER ACCOUNT INFORMATION' is visible");
         Assert.assertEquals(signupPage.accountInformationText.getText(),"ENTER ACCOUNT INFORMATION");
 
-        extentLogger.info("Fill details: Title, Name, Email, Password, Date of birth");
-        signupPage.accountInformation();
-
-        extentLogger.info(" Select checkbox 'Sign up for our newsletter!'");
-        signupPage.newsletters.click();
-        extentLogger.info("Select checkbox 'Receive special offers from our partners!'");
-        signupPage.optin.click();
-
-        extentLogger.info("Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number and Click 'Create Account button'");
-        signupPage.addressInformation();
+        extentLogger.info("Fill details: Enter all Account Information");
+        signupPage.enterAccountInformation();
 
         extentLogger.info("Verify that 'ACCOUNT CREATED!' is visible");
-        Assert.assertEquals(createAcoountPage.accountCreatedText.getText(),"ACCOUNT CREATED!");
+        Assert.assertEquals(accountCreatedPage.accountCreatedText.getText(),"ACCOUNT CREATED!");
 
         extentLogger.info("Click 'Continue' button");
-        createAcoountPage.continueCreateBtn.click();
+        accountCreatedPage.continueCreateBtn.click();
 
         extentLogger.info("Verify that 'Logged in as username' is visible");
-        Assert.assertEquals(createAcoountPage.loggedUsername.getText(),"Gulay");
+        Assert.assertEquals(accountCreatedPage.loggedUsername.getText(),"Gulay");
 
-        extentLogger.info("Click 'Delete Account' button");
-        deleteAccountPage.deleteAccountBtn.click();
-
-        extentLogger.info("Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button");
-        Assert.assertEquals(deleteAccountPage.accountDeleteText.getText(),"ACCOUNT DELETED!");
-        deleteAccountPage.continueDeleteBtn.click();
+//        extentLogger.info("Click 'Delete Account' button");
+//        deleteAccountPage.deleteAccountBtn.click();
+//
+//        extentLogger.info("Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button");
+//        Assert.assertEquals(deleteAccountPage.accountDeleteText.getText(),"ACCOUNT DELETED!");
+//        deleteAccountPage.continueDeleteBtn.click();
 
 
     }

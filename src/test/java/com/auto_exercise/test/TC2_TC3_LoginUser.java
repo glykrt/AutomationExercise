@@ -27,7 +27,7 @@ public class TC2_TC3_LoginUser extends TestBase{
         Assert.assertEquals(loginPage.yourAccountText.getText(),"Login to your account");
 
         extentLogger.info("Enter correct email address and password and click login button");
-       loginPage.login();
+        loginPage.login();
 
         extentLogger.info("Verify that 'Logged in as username' is visible");
         Assert.assertEquals(loginPage.loggedUsername.getText(),"Gulay");

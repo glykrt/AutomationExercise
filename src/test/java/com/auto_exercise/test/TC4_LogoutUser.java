@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC4_LogoutUser extends TestBase{
+
     LoginPage loginPage;
     @Test
     public void test_logoutUser() {
@@ -40,6 +41,7 @@ public class TC4_LogoutUser extends TestBase{
 
         extentLogger.info("Verify that user is navigated to login page");
         Assert.assertEquals(loginPage.yourAccountText.getText(),"Login to your account");
+
         extentLogger.pass("Passed");
     }
 }

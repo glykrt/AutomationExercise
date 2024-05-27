@@ -5,7 +5,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class DeleteAccountPage extends BasePage {
 
-
     @FindBy(xpath = "//b[text()='Account Deleted!']")
     public WebElement accountDeleteText;
 
